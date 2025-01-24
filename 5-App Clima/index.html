@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>App de Clima</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -14,45 +14,45 @@
         <div class="left-info">
 
             <div class="img-gradiente"></div>
+            
             <div class="hoje-info">
-                <h2>Sexta</h2>
-                <span>12 Abril 2024</span>
+                <h2 id="dia-esc">Sexta</h2>
+                <span id="data">12 Abril 2024</span>
 
                 <div>
                     <i class='bx bx-current-location'></i>
-                    <span>São Paulo, BR</span>
+                    <span id="cidade">Localização</span>
                 </div>
             </div>
             <div class="hoje-clima">
-                <i class='bx bx-sun'></i>
+                <i id="icone-principal" class='bx bxs-leaf'></i>
                 <h1 class="clima-temp">
-                    25°C
+                    <span id="temp">0</span>°C
                 </h1>
-                <h3>Ensolarado</h3>
+                <h3 id="descript">Clima</h3>
+            
             </div>
-
         </div>
 
         <div class="right-info">
-
             <div class="dia-info">
                 <div>
-                    <span class="titulo">PRECIPITAÇÃO</span>
-                    <span class="valor">4 %</span>
+                    <span class="titulo">PRESSÃO</span>
+                    <span class="valor"><span id="valor-pre">0</span> hPa</span>
                 </div>
                 <div>
                     <span class="titulo">UMIDADE</span>
-                    <span class="valor">34 %</span>
+                    <span class="valor"><span id="valor-umi">0</span> %</span>
                 </div>
                 <div>
                     <span class="titulo">VENTO</span>
-                    <span class="valor">6 km/h</span>
+                    <span class="valor"><span id="valor-ven">0</span> km/h</span>
                 </div>
             </div>
 
             <ul class="dias">
                 <li>
-                    <i class='bx bx-cloud' ></i>
+                    <i class='bx bx-cloud'></i>
                     <span>Sáb</span>
                     <span class="dia-temp">23°C</span>
                 </li>
@@ -71,10 +71,16 @@
                     <span>Ter</span>
                     <span class="dia-temp">14°C</span>
                 </li>
+                <li>
+                    <i class='bx bx-cloud-lightning' ></i>
+                    <span>Qua</span>
+                    <span class="dia-temp">14°C</span>
+                </li>
             </ul>
 
             <div class="botao-container">
-                <button class="local-botao">Pesquisar Localização</button>
+                <input type="text" placeholder="digite o nome da cidade" id="txt-user">
+                <button onclick="pesquisar()" class="local-botao" >Pesquisar Localização</button>
             </div>
 
         </div>
@@ -82,6 +88,6 @@
     </div>
 
 
-    
+    <script src="./API.js"></script>
 </body>
 </html>
