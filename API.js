@@ -121,10 +121,17 @@ async function buscarcidade(cidade) {
      console.log(dados)
 }
 
+const input = document.querySelector("#txt-user");
 function pesquisar() {
-    const input = document.querySelector("#txt-user");
     let cidade = input.value
     input.value = ""
     
     buscarcidade(cidade);
 }
+input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        pesquisar();
+    }
+});
+
+buscarcidade('brasil')
